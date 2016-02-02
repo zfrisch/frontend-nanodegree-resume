@@ -64,8 +64,10 @@ The International Name challenge in Lesson 2 where you'll create a function that
 */
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName() || function(){};
+	var resumeName = $("#name").text();
+    var iName = inName(resumeName) || function(){};
     $('#name').html(iName);  
+	
   });
 });
 
@@ -85,7 +87,9 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
 });
 
 
@@ -124,10 +128,8 @@ function initializeMap() {
 
     // initializes an empty array
     var locations = [];
-
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
-
+    locations.push(bio.contact.location);
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide: 
@@ -135,7 +137,6 @@ function initializeMap() {
     education.schools.forEach(function(school){
       locations.push(school.location);
     });
-
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide: 
@@ -143,10 +144,8 @@ function initializeMap() {
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
-
     return locations;
   }
-
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
@@ -176,7 +175,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -238,11 +237,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+map.fitBounds(mapBounds);
+});
