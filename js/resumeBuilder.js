@@ -8,7 +8,7 @@ var bio = {
 			"github": "zfrisch",
 			"location": "Green Bay"
 	},
-	"pic": "http://vignette3.wikia.nocookie.net/es.futurama/images/4/4f/Fry.JPG/revision/latest?cb=20110605191102",
+	"pic": "http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png",
 	"welcome": "Welcome to my Resume!",
 	"skills": ['HTML 5', 'CSS3', 'JavaScript', 'jQuery', 'Node.js', 'BootStrap', 'Foundation'],
 	"display": function() {
