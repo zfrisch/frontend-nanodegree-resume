@@ -2,24 +2,24 @@
 var bio = {
 	"name": "Zak Frisch",
 	"role": "Web Developer",
-	"contact": {
+	"contacts": {
 			"email": "zfrisch@gmail.com",
-			"phone": "920-660-1089",
+			"mobile": "920-660-1089",
 			"github": "zfrisch",
 			"location": "Green Bay"
 	},
-	"pic": "http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png",
-	"welcome": "Welcome to my Resume!",
+	"biopic": "http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png",
+	"welcomeMessage": "Welcome to my Resume!",
 	"skills": ['HTML 5', 'CSS3', 'JavaScript', 'jQuery', 'Node.js', 'BootStrap', 'Foundation'],
 	"display": function() {
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-		var formattedMobile = HTMLmobile.replace('%data%', bio.contact.phone);
-		var formattedGithub = HTMLgithub.replace('%data%', bio.contact.github);
-		var formattedEmail = HTMLemail.replace('%data%', bio.contact.email);
-		var formattedLocation = HTMLlocation.replace('%data%', bio.contact.location);
-		var formattedPic = HTMLbioPic.replace('%data%', bio.pic);
-		var formattedWelcome = HTMLwelcomeMsg.replace('%data%', bio.welcome);
+		var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+		var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+		var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+		var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+		var formattedPic = HTMLbioPic.replace('%data%', bio.biopic);
+		var formattedWelcome = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
 	
 		
 		$("#header").prepend(formattedRole).prepend(formattedName);
@@ -42,7 +42,7 @@ var education = {
 		"name": "NWTC",
 		"location": "Green Bay, WI",
 		"degree":"Bachelor of Technical Sciences",
-		"major": ["Networking"],
+		"majors": ["Networking"],
 		"dates":"2014-2015",
 		"url": "https://www.nwtc.edu/"
 		},
@@ -50,7 +50,7 @@ var education = {
 		"name": "Florida Mahatma University",
 		"location": "Tampa, FL",
 		"degree":"Extra-marital Arts",
-		"major": ["I majored in having a silly degree"],
+		"majors": ["I majored in having a silly degree"],
 		"dates":"2010-2013",
 		"url": "https://www.florida.com/"
 		}
@@ -71,8 +71,8 @@ var education = {
 		var formattedschoolDates = HTMLschoolDates.replace('%data%', education.schools[item].dates);
 		var formattedschoolLocation = HTMLschoolLocation.replace('%data%', education.schools[item].location);
 		var allmajors="";
-		for(i=0; i<education.schools[item].major.length;i++) {
-		var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[item].major[i]);	
+		for(i=0; i<education.schools[item].majors.length;i++) {
+		var formattedschoolMajor = HTMLschoolMajor.replace('%data%', education.schools[item].majors[i]);	
 		allmajors = allmajors + formattedschoolMajor;
 		}
 		$('.education-entry:last').append(formattedschoolName)
