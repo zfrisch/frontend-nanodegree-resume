@@ -50,7 +50,7 @@ var education = {
 		"name": "Florida Mahatma University",
 		"location": "Tampa, FL",
 		"degree":"Extra-marital Arts",
-		"major": ["I majored in having a useless degree"],
+		"major": ["I majored in having a silly degree"],
 		"dates":"2010-2013",
 		"url": "https://www.florida.com/"
 		}
@@ -142,7 +142,7 @@ var projects = {
 	"title": "Resume", 
 	"dates": "January 2016",
 	"description": "Resume Project From Udacity!",
-	"images": ["http://10poundtees.co.uk/image/cache//data/designs/dont_panic/DontPanic_t_shirt_tn-300x300.jpg"]
+	"images": ["http://www.superiorsilkscreen.com/546-592-thickbox/there-are-only-10-kinds-of-people-those-who-understand-binary-and-those-who-don-t.jpg"]
 	}
 	],
 	"display": function() {
