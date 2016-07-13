@@ -146,7 +146,7 @@ var projects = {
 	}
 	],
 	"display": function() {
-		for (item in projects.projects) {
+		projects.projects.forEach(function(item, index) {
 			$('#projects').append(HTMLprojectStart);
 			var formattedprojecttitle = HTMLprojectTitle.replace('%data%', projects.projects[index].title);
 			var formattedprojectdates = HTMLprojectDates.replace('%data%', projects.projects[index].dates);
@@ -160,7 +160,7 @@ var projects = {
 			.append(formattedprojectdates)
 			.append(formattedprojectdescription)
 			.append(allimages);
-		};
+		});
 	}
 }
 function inName(string) {
